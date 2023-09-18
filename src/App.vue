@@ -1,14 +1,26 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+    <Myheader/>
     <router-view/>
+    <Myfooter/>
   </div>
 </template>
 
+<script>
+import Myheader from '@/components/Myheader.vue'
+import Myfooter from '@/components/Myfooter.vue'
+
+export default {
+  name: 'AppView',
+  components: {
+    Myheader,
+    Myfooter
+  }
+}
+</script>
+
 <style lang="less">
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,8 +29,12 @@
   color: #2c3e50;
 }
 
+body{
+  margin: 0;
+  padding: 0;
+}
 nav {
-  padding: 30px;
+  // padding: 30px;
 
   a {
     font-weight: bold;
